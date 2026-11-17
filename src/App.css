@@ -1,0 +1,1087 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* ========================================
+   01 — EDITORIAL ACCESSIBLE COLOUR SYSTEM
+======================================== */
+
+.app {
+  --content-width: 1200px;
+
+  /* Primary colours */
+  --ink: #292C27;
+  --text: #53584F;
+  --muted: #6D5847;
+
+  /* Editorial accents */
+  --accent: #254C3B;
+  --accent-secondary: #9A5035;
+  --sage: #78917A;
+  --clay: #D9BDA4;
+
+  /* Backgrounds */
+  --paper: #F0EBE1;
+  --soft: #FBF9F4;
+  --section-bg: #EAE4D8;
+  --card-bg: #FFFDF9;
+
+  /* Borders */
+  --border: #DED8CC;
+  --border-strong: #CFC6B7;
+
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 48px 32px;
+
+  box-sizing: border-box;
+
+  color: var(--ink);
+  background: var(--paper);
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   GLOBAL
+======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #EAE3D5;
+}
+
+.page-header,
+.introduction,
+.scale-introduction,
+.visualization-section,
+.alternative-introduction,
+.final-conclusion,
+.page-footer {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* ========================================
+   TYPOGRAPHY
+======================================== */
+
+.page-header h1,
+.introduction h2,
+.scale-introduction h2,
+.part-label h2,
+.analysis h3,
+.analysis-header h3,
+.chart-heading h3,
+.analysis-conclusion p,
+.alternative-introduction h2,
+.final-conclusion h2,
+.scale-overview strong,
+.country-tooltip strong,
+.cluster-card-header strong,
+.cluster-stat strong {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+
+  color: var(--accent-secondary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.4;
+}
+
+/* ========================================
+   MAIN HEADER
+======================================== */
+
+.page-header {
+  padding: 75px 0 30px;
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.page-header h1 {
+  max-width: 850px;
+  margin: 0;
+
+  color: var(--accent);
+
+  font-size: clamp(3rem, 6vw, 4.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+  font-weight: 700;
+}
+
+.intro {
+  max-width: 760px;
+  margin: 28px 0 0;
+
+  color: var(--muted);
+
+  font-size: 1.2rem;
+  line-height: 1.65;
+  letter-spacing: -0.015em;
+}
+
+/* ========================================
+   INTRODUCTION
+======================================== */
+
+.introduction {
+  padding: 65px 0 75px;
+}
+
+.introduction h2,
+.scale-introduction h2,
+.alternative-introduction h2,
+.final-conclusion h2 {
+  max-width: 800px;
+  margin: 0 0 24px;
+
+  color: var(--accent);
+
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+  font-weight: 600;
+}
+
+.introduction p:not(.eyebrow),
+.scale-introduction>p:not(.eyebrow),
+.alternative-introduction>p:not(.eyebrow),
+.final-conclusion>p:not(.eyebrow) {
+  max-width: 900px;
+  margin: 0 0 18px;
+
+  color: var(--text);
+
+  font-size: 1.1rem;
+  line-height: 1.65;
+  letter-spacing: -0.015em;
+}
+
+/* ========================================
+   SECTION LABELS
+======================================== */
+
+.part-label {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  column-gap: 22px;
+  align-items: start;
+
+  margin-bottom: 40px;
+}
+
+.part-label>span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+
+  border: 1px solid #C8BDAE;
+  border-radius: 50%;
+
+  color: var(--accent);
+
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.part-label>p.eyebrow {
+  align-self: center;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.part-label>div {
+  min-width: 0;
+}
+
+.part-label>div>.eyebrow {
+  margin: 0 0 12px;
+}
+
+.part-label>div>h2 {
+  margin: 0 0 12px;
+
+  color: var(--accent);
+
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+  font-weight: 600;
+}
+
+.part-label>div>p:not(.eyebrow) {
+  margin: 0;
+
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ========================================
+   SCALE INTRODUCTION
+======================================== */
+
+.scale-introduction {
+  position: relative;
+
+  width: calc(100% + 64px);
+  margin-left: -32px;
+  padding: 65px 32px 60px;
+
+  background: var(--section-bg);
+}
+
+.scale-introduction h2 {
+  margin-bottom: 20px;
+}
+
+/* Scale overview */
+
+.scale-overview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+
+  margin-top: 35px;
+  padding-top: 25px;
+
+  border-top: 1px solid var(--border-strong);
+}
+
+.scale-overview>div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.scale-overview span {
+  color: var(--accent-secondary);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.scale-overview strong {
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.scale-overview p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+/* ========================================
+   VISUALIZATION SECTIONS
+======================================== */
+
+.visualization-section {
+  padding: 75px 0 85px;
+  border-bottom: 1px solid var(--border-strong);
+}
+
+/* ========================================
+   CHART PRESENTATION
+======================================== */
+
+.chart-panel {
+  width: 100%;
+  min-width: 0;
+  padding: 30px 0;
+
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.chart {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.chart-heading {
+  width: 100%;
+  margin: 0 0 25px;
+  text-align: left;
+}
+
+.chart-heading h3 {
+  margin: 0 0 10px;
+
+  color: var(--accent);
+
+  font-size: 1.35rem;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+}
+
+.chart-heading .chart-subtitle {
+  width: 100%;
+  margin: 0;
+
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.chart-scale-label {
+  display: inline-block;
+
+  margin-top: 15px;
+  padding: 6px 11px;
+
+  border: 1px solid var(--border);
+  border-radius: 4px;
+
+  background: var(--section-bg);
+  color: var(--accent);
+
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* ========================================
+   02 — ANALYSIS SECTION
+======================================== */
+
+.analysis {
+  width: 100%;
+  margin: 45px 0 0;
+  padding: 35px 40px;
+
+  box-sizing: border-box;
+
+  background: var(--soft);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+
+  text-align: left;
+}
+
+.analysis-header {
+  margin-bottom: 30px;
+  padding-bottom: 25px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.analysis-header .eyebrow {
+  margin-bottom: 12px;
+}
+
+.analysis-header h3 {
+  margin: 0;
+
+  color: var(--accent);
+
+  font-size: 1.55rem;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+}
+
+/* Analysis headings */
+
+.analysis h3 {
+  margin: 34px 0 13px;
+
+  color: #39483C;
+
+  font-size: 1.25rem;
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+}
+
+.analysis h3:first-of-type {
+  margin-top: 0;
+}
+
+/* Analysis paragraphs */
+
+.analysis p:not(.eyebrow) {
+  max-width: 900px;
+  margin: 0 0 16px;
+
+  color: var(--text);
+
+  font-size: 1rem;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
+}
+
+/* Inline code */
+
+.analysis code {
+  padding: 3px 6px;
+
+  border-radius: 4px;
+  background: #EAE4D8;
+
+  color: var(--accent);
+  font-size: 0.9em;
+}
+
+/* ========================================
+   03 — KEY TAKEAWAY
+======================================== */
+
+.analysis-conclusion {
+  margin-top: 35px;
+  padding: 22px 25px;
+
+  background: #E9EDE5;
+  border-left: 3px solid var(--accent-secondary);
+  border-radius: 0 6px 6px 0;
+}
+
+.analysis-conclusion .eyebrow {
+  margin-bottom: 10px;
+  color: #8C4A30;
+}
+
+.analysis-conclusion p:not(.eyebrow) {
+  margin: 0;
+
+  color: #39483C;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* ========================================
+   04 — TRANSITION SECTION
+======================================== */
+
+.alternative-introduction {
+  width: calc(100% + 64px);
+  margin: 0 0 0 -32px;
+  padding: 75px 32px;
+
+  background: var(--section-bg);
+  border-bottom: 1px solid var(--border-strong);
+}
+
+.alternative-introduction h2 {
+  max-width: 700px;
+}
+
+.alternative-introduction>p:not(.eyebrow) {
+  max-width: 850px;
+}
+
+/* ========================================
+   05 — CLUSTERING SECTION
+======================================== */
+
+.clustering-section {
+  padding-top: 65px;
+  border-top: none;
+}
+
+/* ========================================
+   06 — FINAL CONCLUSION
+======================================== */
+
+.final-conclusion {
+  width: calc(100% + 64px);
+  margin-left: -32px;
+  padding: 75px 32px;
+
+  background: var(--accent);
+}
+
+.final-conclusion .eyebrow {
+  color: #D9BDA4;
+}
+
+.final-conclusion h2 {
+  color: #FFFDF9;
+}
+
+.final-conclusion>p:not(.eyebrow) {
+  color: #E4E8DF;
+}
+
+/* Accessible conclusion number */
+
+.final-conclusion .part-label>span {
+  color: #F5F1E8;
+  border-color: #D9BDA4;
+}
+
+/* ========================================
+   07 — FOOTER
+======================================== */
+
+.page-footer {
+  padding: 30px 0;
+
+  border-top: 1px solid var(--border-strong);
+
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+  letter-spacing: 0.015em;
+}
+
+.page-footer a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  transition: color 0.2s ease;
+}
+
+.page-footer a:hover {
+  color: #8C4A30;
+}
+
+/* ========================================
+   08 — RESPONSIVE MAIN PAGE
+======================================== */
+
+@media (max-width: 650px) {
+
+  .app {
+    padding: 24px 18px;
+  }
+
+  /* Header */
+
+  .page-header {
+    padding: 45px 0 35px;
+  }
+
+  .page-header h1 {
+    font-size: clamp(2.5rem, 10vw, 3.4rem);
+  }
+
+  .intro {
+    font-size: 1.05rem;
+    line-height: 1.55;
+  }
+
+  /* Introduction */
+
+  .introduction {
+    padding: 45px 0 50px;
+  }
+
+  .introduction p:not(.eyebrow),
+  .scale-introduction>p:not(.eyebrow),
+  .alternative-introduction>p:not(.eyebrow),
+  .final-conclusion>p:not(.eyebrow) {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  /* Full-width sections */
+
+  .scale-introduction,
+  .alternative-introduction,
+  .final-conclusion {
+    width: calc(100% + 36px);
+    margin-left: -18px;
+    padding: 45px 18px;
+  }
+
+  /* Scale overview */
+
+  .scale-overview {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .scale-overview>div {
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-strong);
+  }
+
+  .scale-overview>div:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  /* Visualization sections */
+
+  .visualization-section {
+    padding: 50px 0 55px;
+  }
+
+  /* Charts */
+
+  .chart-panel {
+    padding: 15px 0;
+  }
+
+  /* Analysis */
+
+  .analysis {
+    margin-top: 30px;
+    padding: 23px 19px;
+  }
+
+  .analysis-header h3 {
+    font-size: 1.35rem;
+  }
+
+  .analysis h3 {
+    margin-top: 28px;
+    font-size: 1.15rem;
+  }
+
+  .analysis p:not(.eyebrow) {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  /* Takeaways */
+
+  .analysis-conclusion {
+    padding: 18px;
+  }
+
+  /* Final conclusion */
+
+  .final-conclusion {
+    padding: 50px 18px;
+  }
+}
+
+/* ========================================
+   09 — DENDROGRAM CONTAINER
+======================================== */
+
+.dendrogram-container {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+
+  color: var(--ink);
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   10 — DENDROGRAM CHART
+======================================== */
+
+.radial-chart-scroll {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 100%;
+
+  overflow: hidden;
+}
+
+.radial-chart-scroll svg {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  overflow: visible;
+}
+
+/* ========================================
+   11 — COUNTRY NODES
+======================================== */
+
+.radial-country text {
+  pointer-events: none;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+
+  fill: #53584F;
+}
+
+.radial-country circle {
+  transition: filter 0.2s ease;
+}
+
+.radial-country:hover circle {
+  filter: brightness(0.9);
+}
+
+/* Keyboard focus for accessible SVG nodes */
+
+.radial-country:focus-visible {
+  outline: none;
+}
+
+.radial-country:focus-visible circle {
+  stroke: #292C27;
+  stroke-width: 3px;
+}
+
+/* ========================================
+   12 — COUNTRY TOOLTIP
+======================================== */
+
+.country-tooltip {
+  position: absolute;
+  z-index: 100;
+
+  width: 260px;
+  max-width: calc(100% - 16px);
+
+  margin-top: 16px;
+  padding: 16px;
+
+  box-sizing: border-box;
+
+  background: #FFFDF9;
+  border: 1px solid #DED8CC;
+  border-radius: 8px;
+
+  color: #53584F;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.5;
+
+  box-shadow: 0 5px 20px rgba(41, 44, 39, 0.09);
+  backdrop-filter: blur(8px);
+
+  pointer-events: none;
+
+  transition: background-color 0.15s ease;
+}
+
+.country-tooltip strong {
+  display: block;
+  margin-bottom: 8px;
+
+  color: #254C3B;
+
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Tooltip header */
+
+.country-tooltip-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+
+  margin-bottom: 13px;
+
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.country-tooltip-header .legend-dot {
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.country-tooltip-header strong {
+  color: #254C3B;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Tooltip statistics */
+
+.country-tooltip div {
+  color: #6D5847;
+  font-size: 0.78rem;
+}
+
+.country-tooltip-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  margin-top: 10px;
+
+  color: #6D5847;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+}
+
+.country-tooltip-stat strong {
+  color: #254C3B;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ========================================
+   13 — SELECTION BUTTON
+======================================== */
+
+.clear-selection {
+  display: inline-block;
+
+  margin-top: 10px;
+  padding: 6px 12px;
+
+  background: #FFFDF9;
+  border: 1px solid #CFC6B7;
+  border-radius: 4px;
+
+  color: #254C3B;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.clear-selection:hover {
+  background: #EAE4D8;
+  border-color: #78917A;
+}
+
+.clear-selection:focus-visible {
+  outline: 3px solid #9A5035;
+  outline-offset: 3px;
+}
+
+.country-tooltip .clear-selection {
+  margin-top: 12px;
+}
+
+/* ========================================
+   14 — CLUSTER LEGEND
+======================================== */
+
+.cluster-legend {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+
+  margin-top: 28px;
+}
+
+/* ========================================
+   15 — CLUSTER CARDS
+======================================== */
+
+.cluster-card {
+  min-width: 0;
+
+  padding: 16px;
+
+  background: #FFFDF9;
+  border: 1px solid #DED8CC;
+  border-radius: 6px;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.cluster-card:hover {
+  background: #F5F1E8;
+  border-color: #CFC6B7;
+}
+
+/* Cluster card header */
+
+.cluster-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+
+  color: #53584F;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.cluster-card-header strong {
+  color: #254C3B;
+  font-weight: 600;
+}
+
+/* Cluster colour indicators */
+
+.legend-dot {
+  flex-shrink: 0;
+
+  width: 10px;
+  height: 10px;
+
+  margin-top: 4px;
+
+  border-radius: 50%;
+}
+
+/* Number of countries */
+
+.cluster-count {
+  margin: 8px 0 15px;
+
+  color: #6D5847;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+/* Cluster statistics */
+
+.cluster-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  margin-top: 12px;
+
+  color: #6D5847;
+
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+}
+
+.cluster-stat strong {
+  color: #254C3B;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ========================================
+   16 — TABLET RESPONSIVE
+======================================== */
+
+@media (max-width: 900px) {
+
+  .cluster-legend {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+/* ========================================
+   17 — DENDROGRAM MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+  .cluster-legend {
+    grid-template-columns: 1fr;
+  }
+
+  .country-tooltip {
+    width: 240px;
+    padding: 14px;
+  }
+
+}
+
+/* ========================================
+   18 — SMALL MOBILE
+======================================== */
+
+@media (max-width: 400px) {
+
+  .radial-country text {
+    font-size: 9px;
+  }
+
+}
+
+/* ========================================
+   19 — KEYBOARD ACCESSIBILITY
+======================================== */
+
+/* Visible focus for links and buttons */
+
+button:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible {
+  outline: 3px solid #9A5035;
+  outline-offset: 4px;
+}
+
+/* Don't rely on colour alone for focus */
+
+button:focus-visible,
+a:focus-visible {
+  border-radius: 3px;
+}
+
+/* ========================================
+   20 — EDITORIAL FINISHING DETAILS
+======================================== */
+
+::selection {
+  background: #D9BDA4;
+  color: #292C27;
+}
+
+.analysis,
+.cluster-card {
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.page-footer {
+  letter-spacing: 0.015em;
+}
+
+/* Reduced motion preference */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+}
+
+/* Mobile analysis surface */
+
+@media (max-width: 650px) {
+
+  .analysis {
+    background: #FBF9F4;
+  }
+
+}
